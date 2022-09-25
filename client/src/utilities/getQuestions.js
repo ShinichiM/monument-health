@@ -13,7 +13,7 @@ const questionArray = [
     // Question Based on response of Do you Smoke (Yes)
     prompt: "How often do you smoke?",
     options: ["Often", "Sometimes", "Rarely"],
-    requiredResponse: [{ id: 2, answer: 0}],
+    requiredResponse: [{ id: 2, answer: 0 }],
     id: 3,
   },
   {
@@ -22,10 +22,14 @@ const questionArray = [
     id: 4,
   },
   {
-    prompt:
-      "How would you describe your nutritional habits? (Balanced, Somewhat Balanced, Unbalanced)",
+    prompt: "How would you describe your nutritional habits?",
     options: ["Healthy", "Somewhat Healthy", "Not Healthy"],
     id: 5,
+  },
+  {
+    prompt: "",
+    options: [""],
+    id: 6,
   },
   {
     prompt: "How has your Mental Health been the past month?",
@@ -36,13 +40,20 @@ const questionArray = [
     // Question based on Response of Mental Health Question (Unbalanced and Poor);
     prompt: "Have you considered speaking with a Professional?",
     options: ["Yes", "No"],
+    requiredResponse: [
+      { id: 7, answer: 1 },
+      { id: 7, answer: 2 },
+    ],
     id: 8,
   },
   {
     prompt: "Have you had a Mammography within the past 6 months?",
     options: ["Yes", "No"],
+    requiredResponse: [{ id: 1, answer: 1 }],
     id: 9,
   },
 ];
+
+const recommendations = [];
 
 module.exports = questionArray;

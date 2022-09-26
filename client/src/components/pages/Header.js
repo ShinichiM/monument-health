@@ -9,8 +9,8 @@ import logo from "../../img/mh_logo.png";
 
 const Header = () => {
   return (
-    <header className="bg-gray-300">
-      <div className="flex w-9/12 mx-auto justify-between">
+    <header className="border-0 shadow-md">
+      <div className="flex w-9/12 mx-auto h-1/4 justify-between">
         <div className="flex">
           <img src={logo} className="h-24 w-32" alt="monument-health" />
         </div>

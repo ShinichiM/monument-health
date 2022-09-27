@@ -1,0 +1,24 @@
+{
+  "name": "monument-health",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "concurrently \"cd server && npm start\" \"cd client && npm start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShinichiM/monument-health.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShinichiM/monument-health/issues"
+  },
+  "homepage": "https://github.com/ShinichiM/monument-health#readme",
+  "dependencies": {
+    "concurrently": "^7.4.0"
+  }
+}

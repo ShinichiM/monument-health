@@ -27,8 +27,8 @@ const questionArray = [
     id: 5,
   },
   {
-    prompt: "",
-    options: [""],
+    prompt: "When was your last physical examination?",
+    options: ["Within the past 6 months", "within the past year", "Over one year"],
     id: 6,
   },
   {
@@ -48,7 +48,7 @@ const questionArray = [
   },
   {
     prompt: "Have you had a Mammography within the past 6 months?",
-    options: ["Yes", "No"],
+    options: ["Yes - WOmen", "No"],
     requiredResponse: [{ id: 1, answer: 1 }],
     id: 9,
   },

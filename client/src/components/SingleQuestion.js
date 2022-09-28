@@ -9,8 +9,8 @@ const Question = ({ question, response, responseHandler }) => {
   // console.log(question);
   return (
     <section className="min-h-full overflow-y-hidden">
-      <div className="relative flex flex-col justify-center overflow-hidden  py-6 sm:py-12">
-        <div className="mx-auto max-w-4xl rounded-3xl p-20 text-center shadow-xl border">
+      <div className="relative flex flex-col justify-center overflow-hidden py-6 sm:py-12">
+        <div className="mx-auto max-w-4xl rounded-3xl p-20 text-center shadow-xl border backdrop-blur">
           <h2 className="text-5xl font-bold leading-tight text-black">
             {question.prompt}
           </h2>

@@ -12,16 +12,36 @@ const Header = () => {
     <header className="border-0 min-h-[20%] shadow-md">
       <div className="flex w-9/12 mx-auto h-1/4 justify-between">
         <div className="flex">
-          <img src={logo} className="h-24 w-32" alt="monument-health" />
+          <a href="https://monumenthealth.net/">
+            <img src={logo} className="h-24 w-32" alt="monument-health" />
+          </a>
         </div>
         <nav className="w-full mt-auto mb-auto mx-0">
           <ol className="text-center flex justify-around">
-            <li>Our Plans</li>
-            <li>Providers</li>
-            <li>About Us</li>
-            <li>Blog</li>
-            <li>Good Life Wellness Solutions</li>
-            <li>Contact Us</li>
+            <li>
+              <a href="https://monumenthealth.net/monument-health-insurance-plans/">
+                Our Plans
+              </a>
+            </li>
+            <li>
+              <a href="https://monumenthealth.net/provider-directory/">
+                Providers
+              </a>
+            </li>
+            <li>
+              <a href="https://monumenthealth.net/about-us/"> About Us</a>
+            </li>
+            <li>
+              <a href="https://monumenthealth.net/monumenthealth-blog/">Blog</a>
+            </li>
+            <li>
+              <a href="https://monumenthealth.net/about-good-life-wellness-solutions/">
+                Good Life Wellness Solutions
+              </a>
+            </li>
+            <li>
+              <a href="https://monumenthealth.net/contact-us/">Contact Us</a>
+            </li>
           </ol>
         </nav>
       </div>

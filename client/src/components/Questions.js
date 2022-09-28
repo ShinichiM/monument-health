@@ -6,24 +6,15 @@ import { Link } from "react-router-dom";
 
 const Questions = ({ response, setResponse }) => {
   const [currentQuestionIndex, setQuestionIndex] = useState(0);
-  const [hasDependentQuestion, setHasDependentQuestion] = useState(false);
-  // const [response, setResponse] = useState([]);
   let question = questionArray[currentQuestionIndex];
   // Conditional rendering on response of questions based on rqeuiredResponse attribute of question
   useEffect(() => {
-    // console.log('outside dependency check: ', hasDependentQuestion);
-
     localStorage.setItem("response", JSON.stringify(response));
     question = questionArray[currentQuestionIndex];
     if (
       question.requiredResponse !== undefined &&
       currentQuestionIndex < questionArray.length
     ) {
-      console.log(currentQuestionIndex, " current index inide use effect");
-      // console.log(
-      //   ` - response to question ${question.prompt}`,
-      //   response[question.requiredResponse[0].id - 1]
-      // );
       const answer = response[question.requiredResponse[0].id - 1].answer;
       const requiredAnswer =
         questionArray[question.requiredResponse[0].id - 1].options[
@@ -38,7 +29,6 @@ const Questions = ({ response, setResponse }) => {
         if (currentQuestionIndex === questionArray.length - 1) {
           window.location.href = "http://localhost:3000/recommendation";
         }
-        // console.log(response, " - index - ", currentQuestionIndex);
       }
     }
   }, [currentQuestionIndex, setQuestionIndex, response, setResponse]);
@@ -62,7 +52,6 @@ const Questions = ({ response, setResponse }) => {
       ]);
     }
   };
-
   return (
     <div className="bg-[#005E83] min-h-[80%]">
       <Question

@@ -6,6 +6,7 @@ const Question = ({ question, response, responseHandler }) => {
   // quesitons render before hitting logic so the next question id will be returned
   // questions also start at index 1 so need to index by response array by [question.id-2]
   // bg-[#092540] for card background
+  // console.log(question);
   return (
     <section className="min-h-full overflow-y-hidden">
       <div className="relative flex flex-col justify-center overflow-hidden  py-6 sm:py-12">

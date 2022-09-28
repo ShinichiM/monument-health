@@ -6,52 +6,59 @@ import { Link } from "react-router-dom";
 
 const Questions = ({ response, setResponse }) => {
   const [currentQuestionIndex, setQuestionIndex] = useState(0);
+  const [hasDependentQuestion, setHasDependentQuestion] = useState(false);
   // const [response, setResponse] = useState([]);
-  const question = questionArray[currentQuestionIndex];
+  let question = questionArray[currentQuestionIndex];
   // Conditional rendering on response of questions based on rqeuiredResponse attribute of question
   useEffect(() => {
+    // console.log('outside dependency check: ', hasDependentQuestion);
+
     localStorage.setItem("response", JSON.stringify(response));
+    question = questionArray[currentQuestionIndex];
     if (
-      question.requiredResponse &&
+      question.requiredResponse !== undefined &&
       currentQuestionIndex < questionArray.length
     ) {
+      console.log(currentQuestionIndex, " current index inide use effect");
+      // console.log(
+      //   ` - response to question ${question.prompt}`,
+      //   response[question.requiredResponse[0].id - 1]
+      // );
       const answer = response[question.requiredResponse[0].id - 1].answer;
       const requiredAnswer =
         questionArray[question.requiredResponse[0].id - 1].options[
           question.requiredResponse[0].answer
         ];
-      console.log(answer, " - - required: ", requiredAnswer);
       if (answer !== requiredAnswer) {
-        setQuestionIndex(currentQuestionIndex + 1);
         setResponse([
           ...response,
           { answer: "n/a", questionKey: currentQuestionIndex },
         ]);
+        setQuestionIndex(currentQuestionIndex + 1);
+        if (currentQuestionIndex === questionArray.length - 1) {
+          window.location.href = "http://localhost:3000/recommendation";
+        }
+        // console.log(response, " - index - ", currentQuestionIndex);
       }
     }
-  }, [question.requiredResponse, currentQuestionIndex, response]);
-
-  const handleLastQuestionResponse = (event) => {
-    const selection = event.target.textContent;
-  };
+  }, [currentQuestionIndex, setQuestionIndex, response, setResponse]);
 
   const handleAnswerResponse = (event) => {
     event.preventDefault();
-    const questionKey = currentQuestionIndex + 1;
-
     // conditional rendering based on last element of question array
     if (currentQuestionIndex === questionArray.length - 1) {
       setResponse([
         ...response,
-        { answer: event.target.textContent, questionKey: questionKey },
+        { answer: event.target.textContent, questionKey: currentQuestionIndex },
       ]);
+      // setQuestionIndex(currentQuestionIndex + 1);
       window.location.href = "http://localhost:3000/recommendation";
       console.log("finished");
     } else {
       setQuestionIndex(currentQuestionIndex + 1);
       setResponse([
         ...response,
-        { answer: event.target.textContent, questionKey: questionKey },
+        { answer: event.target.textContent, questionKey: currentQuestionIndex },
       ]);
     }
   };

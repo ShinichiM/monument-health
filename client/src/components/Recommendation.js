@@ -1,14 +1,18 @@
 import React from "react";
+import questionArray from "../utilities/getQuestions";
 
-const Recommendation = ({ response }) => {
+const Recommendation = () => {
   const answers = JSON.parse(localStorage.getItem("response"));
-  console.log(answers);
-  console.log(typeof answers)
+  const recommend = answers.map((item, index) => {
+    return `Prompt: ${questionArray[item.questionKey].prompt}, Answer: ${item.answer} `;
+  });
+
+  console.log('recommendation array: ', recommend);
   return (
     <div>
       Recommendation
-      {answers.map((item) => {
-        return <h3>{item.answer}</h3>;
+      {recommend.map((item) => {
+        return <h3>{item}</h3>;
       })}
     </div>
   );

@@ -15,21 +15,29 @@ const questionArray = [
     options: ["Often", "Sometimes", "Rarely"],
     requiredResponse: [{ id: 2, answer: 0 }],
     id: 3,
+    recommendation: "Stop smoking",
   },
   {
     prompt: "How often do you exercise?",
     options: ["Everyday", "Multiple Times a Week", "Never"],
     id: 4,
+    recommendation: "Exercise atleast 3x week"
   },
   {
     prompt: "How would you describe your nutritional habits?",
     options: ["Healthy", "Somewhat Healthy", "Not Healthy"],
     id: 5,
+    recommendation: "Diet consisting of x, y, z"
   },
   {
     prompt: "When was your last physical examination?",
-    options: ["Within the past 6 months", "within the past year", "Over one year"],
+    options: [
+      "Within the past 6 months",
+      "within the past year",
+      "Over one year",
+    ],
     id: 6,
+    recommendation: "Physical examinations every 6 months"
   },
   {
     prompt: "How has your Mental Health been the past month?",
@@ -45,12 +53,14 @@ const questionArray = [
       { id: 7, answer: 2 },
     ],
     id: 8,
+    recommendation: "Seek proper professional care"
   },
   {
     prompt: "Have you had a Mammography within the past 6 months?",
-    options: ["Yes - WOmen", "No"],
+    options: ["Yes", "No"],
     requiredResponse: [{ id: 1, answer: 1 }],
     id: 9,
+    recommendation: "Mammographies every 6 months"
   },
 ];
 
